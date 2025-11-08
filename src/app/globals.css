@@ -1,0 +1,223 @@
+/* Import Outfit font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  
+  /* Your Custom Color Stack */
+  --background: #ffffff;
+  --foreground: #000000;
+  
+  --card: #ffffff;
+  --card-foreground: #000000;
+  
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  
+  /* Primary - Teal/Green (#058270) */
+  --primary: #058270;
+  --primary-foreground: #ffffff;
+  --primary-light: #ccfbf1;
+  
+  /* Secondary - Dark Grey (#212529) */
+  --secondary: #F5F5F5;
+  --secondary-foreground: #212529;
+  --secondary-dark: #000000;
+  
+  /* Muted - Grey tones */
+  --muted: #ececec;
+  --muted-foreground: #6c757d;
+  
+  /* Accent - Using primary light */
+  --accent: #ccfbf1;
+  --accent-foreground: #058270;
+  
+  /* Destructive - Error Red */
+  --destructive: rgb(220 38 38);
+  
+  /* Borders and Inputs */
+  --border: #ececec;
+  --input: #ecf0f1;
+  --ring: #058270;
+  
+  /* Chart colors */
+  --chart-1: #058270;
+  --chart-2: #ccfbf1;
+  --chart-3: #033A32;
+  --chart-4: #212529;
+  --chart-5: #ececec;
+  
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #058270;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #212529;
+  --sidebar-border: #ececec;
+  --sidebar-ring: #058270;
+  
+  /* Custom background variants */
+  --background-secondary: #F5F5F5;
+  --background-scroll: #ecf0f1;
+  --background-darkgreen: #033A32;
+}
+
+.dark {
+  /* Dark mode with your color adjustments */
+  --background: #033A32;
+  --foreground: #ffffff;
+  
+  --card: #212529;
+  --card-foreground: #ffffff;
+  
+  --popover: #212529;
+  --popover-foreground: #ffffff;
+  
+  --primary: #058270;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #000000;
+  --secondary-foreground: #ffffff;
+  
+  --muted: rgba(255, 255, 255, 0.1);
+  --muted-foreground: #aaaaaa;
+  
+  --accent: #058270;
+  --accent-foreground: #ffffff;
+  
+  --destructive: rgb(220 38 38);
+  
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #058270;
+  
+  --chart-1: #058270;
+  --chart-2: #ccfbf1;
+  --chart-3: #033A32;
+  --chart-4: #ececec;
+  --chart-5: #F5F5F5;
+  
+  --sidebar: #212529;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #058270;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #000000;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #058270;
+  
+  --background-secondary: #212529;
+  --background-scroll: #1a1d20;
+  --background-darkgreen: #033A32;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  
+  /* Typography scale matching your theme */
+  h1, .heading {
+    font-size: 2.5em;
+    color: var(--foreground);
+    font-weight: 600;
+  }
+  
+  h2, .subheading {
+    font-size: 1.5em;
+    color: var(--foreground);
+    font-weight: 500;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  h5 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  h6 {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}

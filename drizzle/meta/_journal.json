@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1762577276163,
+      "tag": "0000_loud_spectrum",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1762579631970,
+      "tag": "0001_polite_zaladane",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1762582123532,
+      "tag": "0002_condemned_slipstream",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1762583314135,
+      "tag": "0003_redundant_krista_starr",
+      "breakpoints": true
+    }
+  ]
+}
